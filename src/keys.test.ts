@@ -1,4 +1,3 @@
-import { describe, test, it, expect } from 'vitest';
 import { keys } from './keys';
 import { AssertEqual } from './_types';
 
@@ -11,7 +10,7 @@ describe('Test for keys', () => {
     expect(keys({ a: 'x', b: 'y', c: 'z' })).toEqual(['a', 'b', 'c']);
   });
 
-  describe('strict', () => {
+  it('strict', () => {
     const actual = keys.strict({ 5: 'x', b: 'y', c: 'z' } as const);
     expect(actual).toEqual(['5', 'b', 'c']);
 
