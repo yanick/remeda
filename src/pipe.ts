@@ -73,9 +73,11 @@ export function pipe(
   ...operations: Array<(value: any) => any>
 ): any {
   let ret = value;
+  console.log(operations);
   const lazyOps = operations.map(op => {
     const { lazy, lazyArgs } = op as LazyOp;
     if (lazy) {
+      console.log('!', lazyArgs);
       const fn: any = lazy(...lazyArgs);
       fn.indexed = lazy.indexed;
       fn.single = lazy.single;

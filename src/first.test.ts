@@ -18,7 +18,7 @@ test('empty array', () => {
 });
 
 describe('pipe', () => {
-  test('as no-fn', () => {
+  test.only('as no-fn', () => {
     const counter = createCounter();
     const result = pipe(
       [1, 2, 3, 4, 5, 6] as const,
